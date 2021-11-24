@@ -1,0 +1,17 @@
+.fruit{
+    display: flex;
+    flex-direction: row;
+    border: 2px solid black;
+    padding: 15px;
+    margin: 5px;
+    width: 300px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+}
+
+.fruit button,
+.fruit p {
+    font-size: 20pt;
+    margin: 5px;
+}
