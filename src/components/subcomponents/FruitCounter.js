@@ -1,6 +1,5 @@
 import React from 'react';
 import Button from "./Button";
-import './Fruitcounter.css';
 
 function FruitCounter({name, icon, amount, onClickFunction}) {
     return (
