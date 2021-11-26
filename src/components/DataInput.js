@@ -1,5 +1,6 @@
 import React from 'react';
 import InputField from "./subcomponents/InputField";
+import Button from "./subcomponents/Button";
 
 
 /*
@@ -93,14 +94,17 @@ const DataInput = ({
                 value={postalCodeValue}
                 onChangeFunction={(e) => setPostalCodeValue(e.target.value)}
             />
-            <p>Bezorgfrequentie</p>
-            <select id="deliveryFrequentie" onChange={(e) => setDeliveryFrequentieValue(e.target.value)}>
-                <option value="onbekend">maak een keuze</option>
-                <option value="iedere week">iedere week</option>
-                <option value="om de week">om de week</option>
-                <option value="iedere maand">iedere maand</option>
-            </select>
-            <div>
+            <div className="inputfield">
+                <p>Bezorgfrequentie</p>
+                <select id="deliveryFrequentie" onChange={(e) => setDeliveryFrequentieValue(e.target.value)}>
+                    <option value="onbekend">maak een keuze</option>
+                    <option value="iedere week">iedere week</option>
+                    <option value="om de week">om de week</option>
+                    <option value="iedere maand">iedere maand</option>
+                </select>
+            </div>
+            <div className="inputfield">
+                <p>Bezorgtijd</p>
                 <input type="radio" id="deliveryTimeDay" name="deliveryTime" value="overdag"
                        onClick={(e) => setDeliveryTimeValue(e.target.value)}/>
                 <label htmlFor="deliveryTimeDay">Overdag</label>
@@ -108,9 +112,11 @@ const DataInput = ({
                        onClick={(e) => setDeliveryTimeValue(e.target.value)}/>
                 <label htmlFor="deliveryTimeEvening">'s Avonds</label>
             </div>
-            <p>{deliveryTimeValue}</p>
-            <textarea name="comment" rows="5" cols={textFieldSize}
-                      onChange={(e) => setcommentValue(e.target.value)}></textarea>
+            <div className="inputfield">
+                <p>Commentaar</p>
+                <textarea className="inputfield" name="comment" rows="5" cols={textFieldSize}
+                          onChange={(e) => setcommentValue(e.target.value)}></textarea>
+            </div>
             <InputField
                 id="termsAndConditions"
                 label="Akkoord met de voorwaarden"
@@ -118,7 +124,12 @@ const DataInput = ({
                 name="termsAndConditions"
                 onClickFunction={handleTermsAndConditions}
             />
-            <button type="submit" disabled={!termsAndConditions || ageValue<18 }>Verzend</button>
+            <Button
+                type="submit"
+                disabled={!termsAndConditions || ageValue < 18}
+            >
+                Verzend
+            </Button>
         </form>
     );
 };
