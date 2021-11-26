@@ -1,6 +1,7 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './App.css';
 import FruitInput from "./components/FruitInput";
+import DataInput from "./components/DataInput";
 
 // import Button from "./components/Button"
 // we gaan eerst 1 fruitcounter werkend maken voordat we de rest gaan doen.
@@ -25,13 +26,56 @@ import FruitInput from "./components/FruitInput";
 
 
 function App() {
+    const [amountStrawberries, setAmountStrawberries] = useState(0);
+    const [amountBananas, setAmountBananas] = useState(0);
+    const [amountKiwis, setAmountKiwis] = useState(0);
+    const [amountAples, setAmountAples] = useState(0);
 
+    const [termsAndConditions, togleTermsAndConditions] = useState(false);
+    const [firstNameValue, setFirstNameValue] = useState("");
+    const [lastNameValue, setLastNameValue] = useState("");
+    const [ageValue, setAgeValue] = useState(18);
+    const [postalCodeValue, setPostalCodeValue] = useState("");
+    const [deliveryFrequentieValue, setDeliveryFrequentieValue] = useState("");
+    const [deliveryTimeValue, setDeliveryTimeValue] = useState("");
+    const [commentValue, setcommentValue] = useState("");
 
     return (
         <>
             <h1>Fruitmand bezorgservice</h1>
-            <FruitInput />
+            <FruitInput
+                amountStrawberries={amountStrawberries}
+                setAmountStrawberries={setAmountStrawberries}
+                amountBananas={amountBananas}
+                setAmountBananas={setAmountBananas}
+                amountKiwis={amountKiwis}
+                setAmountKiwis={setAmountKiwis}
+                amountAples={amountAples}
+                setAmountAples={setAmountAples}
+            />
+            <DataInput
+                amountStrawberries={amountStrawberries}
+                amountBananas={amountBananas}
+                amountKiwis={amountKiwis}
+                amountAples={amountAples}
 
+                termsAndConditions={termsAndConditions}
+                togleTermsAndConditions={togleTermsAndConditions}
+                firstNameValue={firstNameValue}
+                setFirstNameValue={setFirstNameValue}
+                lastNameValue={lastNameValue}
+                setLastNameValue={setLastNameValue}
+                ageValue={ageValue}
+                setAgeValue={setAgeValue}
+                postalCodeValue={postalCodeValue}
+                setPostalCodeValue={setPostalCodeValue}
+                deliveryFrequentieValue={deliveryFrequentieValue}
+                setDeliveryFrequentieValue={setDeliveryFrequentieValue}
+                deliveryTimeValue={deliveryTimeValue}
+                setDeliveryTimeValue={setDeliveryTimeValue}
+                commentValue={commentValue}
+                setcommentValue={setcommentValue}
+            />
 
         </>
     );

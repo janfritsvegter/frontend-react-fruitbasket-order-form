@@ -1,13 +1,12 @@
-import React, {useState} from 'react';
+import React from 'react';
 import FruitCounter from "./subcomponents/FruitCounter";
 import Button from "./subcomponents/Button";
 import "./FruitInput.css"
 
-const FruitInput = () => {
-    const [amountStrawberries, setAmountStrawberries] = useState(0);
-    const [amountBananas, setAmountBananas] = useState(0);
-    const [amountKiwis, setAmountKiwis] = useState(0);
-    const [amountAples, setAmountAples] = useState(0);
+
+const FruitInput = ({amountStrawberries,setAmountStrawberries,amountBananas,setAmountBananas,
+                        amountKiwis,setAmountKiwis,amountAples,setAmountAples}) => {
+
     function changeStrawberries(input) {
         setAmountStrawberries(amountStrawberries + input);
     }
